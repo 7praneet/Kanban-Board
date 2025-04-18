@@ -1,0 +1,187 @@
+/* Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Smooth transitions for theme changes */
+body {
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: #6200ea;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+#theme-toggle:hover {
+    background: #3700b3;
+}
+
+/* Responsive Kanban Board */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Board Columns */
+.board {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    background: #1e1e1e;
+    border: 2px solid #333;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Board Hover Effect */
+.board:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 6px 10px rgba(255, 255, 255, 0.15);
+}
+
+/* Board Title */
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+/* Task Items */
+.item {
+    background: #2c2c2c;
+    border: 1px solid #444;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    cursor: grab;
+    user-select: none;
+    transition: background 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.item:hover {
+    background: #ffffff;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* Dragging Effect */
+.flying {
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+
+/* Add Task Button */
+#add-task-btn {
+    background: #6200ea;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease-in-out;
+}
+
+#add-task-btn:hover {
+    background: #3700b3;
+}
+
+/* Light Mode Styles */
+.light-mode {
+    background-color: white;
+    color: black;
+}
+
+.light-mode .board {
+    background: #f4f4f4;
+    border: 2px solid #ccc;
+}
+
+.light-mode .item {
+    background: #e0e0e0;
+    border: 1px solid #bbb;
+}
+
+.light-mode .item:hover {
+    background: black;
+    color: white;
+}
+
+.light-mode #theme-toggle {
+    background: black;
+    color: white;
+}
+
+.light-mode #theme-toggle:hover {
+    background: #333;
+}
+
+/* 🔹 Responsive Design Adjustments */
+@media (max-width: 1024px) {
+    .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .board {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    #theme-toggle {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .board {
+        width: 100%;
+    }
+
+    #add-task-btn {
+        width: 90%;
+    }
+}

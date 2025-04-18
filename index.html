@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button id="theme-toggle">🌙 Toggle Theme</button>
+    <div class="container">
+      <div id="todo-board" class="board">
+        <h2>Todo</h2>
+        <p draggable="true" class="item">Learn React</p>
+        <p draggable="true" class="item">Learn Javascript</p>
+      </div>
+
+      <div id="progress-board" class="board">
+        <h2>Progress</h2>
+      </div>
+      <div id="done-board" class="board">
+        <h2>Done</h2>
+      </div>
+    </div>
+    <button id="add-task-btn">Add Task</button>
+    <script src="script.js"></script>
+  </body>
+</html>
